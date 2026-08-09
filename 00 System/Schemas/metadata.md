@@ -34,7 +34,7 @@ tags: [project]
 
 ```yaml
 type: ink
-source_app: orion
+source_app: orion | samsung-notes | xodo | other
 source_asset:
 source_hash:
 processed: false
@@ -44,6 +44,8 @@ created:
 updated:
 tags: [ink]
 ```
+
+`source_app` records provenance/editor, not semantic ownership. For Orion and Samsung Notes the durable artifact is normally an exported PDF. For Xodo the PDF may already be vault-owned and edited in place.
 
 ## Diagram
 
@@ -76,3 +78,4 @@ tags: [decision]
 - Use tags for broad classification, not entity identity.
 - Do not introduce aliases for existing property names without a schema migration.
 - Machine-generated metadata must not silently change human-authored semantic relationships.
+- Capture/editor applications are replaceable. Durable ink knowledge converges on a vault-owned PDF plus Markdown sidecar.
